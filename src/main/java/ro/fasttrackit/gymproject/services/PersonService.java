@@ -36,6 +36,8 @@ public class PersonService {
     public Person editPerson(Integer id, Person person) {
         Person personToEdit = getById(id);
         personToEdit.setName(person.getName());
+        personToEdit.setAddress(person.getAddress());
+        personToEdit.setBirthDate(person.getBirthDate());
         return repository.save(personToEdit);
     }
 }
