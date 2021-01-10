@@ -23,7 +23,7 @@ public class Membership {
         this.id = id;
         this.type = type;
         this.validFrom = validFrom;
-        this.validTo = setValidTo(type);
+        this.validTo = setValidTo(type, validFrom);
     }
 
     public Membership(Type type, LocalDate validFrom) {
@@ -50,7 +50,7 @@ public class Membership {
         this.type = type;
     }
 
-    public LocalDate setValidTo(Type type) {
+    public LocalDate setValidTo(Type type, LocalDate validFrom) {
         LocalDate result = null;
         if (type == Type.ONE_MONTH && validFrom != null) {
             result = validFrom.plusMonths(1);
@@ -59,6 +59,7 @@ public class Membership {
         } else if (validFrom != null) {
             result = validFrom.plusMonths(6);
         }
+        this.validTo = result;
         return result;
     }
 
@@ -68,5 +69,15 @@ public class Membership {
 
     public void setValidFrom(LocalDate validFrom) {
         this.validFrom = validFrom;
+    }
+
+    @Override
+    public String toString() {
+        return "Membership{" +
+                "id=" + id +
+                ", type=" + type +
+                ", validFrom=" + validFrom +
+                ", validTo=" + validTo +
+                '}';
     }
 }

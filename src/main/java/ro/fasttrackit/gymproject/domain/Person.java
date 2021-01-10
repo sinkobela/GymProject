@@ -1,9 +1,6 @@
 package ro.fasttrackit.gymproject.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -16,18 +13,23 @@ public class Person {
     private String address;
     private LocalDate birthDate;
 
+    @OneToOne /* (targetEntity = Membership.class, cascade = CascadeType.ALL) */
+    private Membership membership;
+
+
     public Person() {
     }
 
-    public Person(Integer id, String name, String address, LocalDate birthDate) {
+    public Person(Integer id, String name, String address, LocalDate birthDate, Membership membership) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.birthDate = birthDate;
+        this.membership = membership;
     }
 
-    public Person (String name, String address, LocalDate birthDate) {
-        this(null, name, address, birthDate);
+    public Person (String name, String address, LocalDate birthDate, Membership membership) {
+        this(null, name, address, birthDate, membership);
     }
 
     public Integer getId() {
@@ -60,5 +62,13 @@ public class Person {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public Membership getMembership() {
+        return membership;
+    }
+
+    public void setMembership(Membership membership) {
+        this.membership = membership;
     }
 }
