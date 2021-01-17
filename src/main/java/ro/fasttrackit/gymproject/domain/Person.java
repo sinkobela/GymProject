@@ -13,23 +13,27 @@ public class Person {
     private String address;
     private LocalDate birthDate;
 
-    @OneToOne /* (targetEntity = Membership.class, cascade = CascadeType.ALL) */
+    @ManyToOne//(cascade = CascadeType.ALL)
+    private Gym gym;
+
+    @OneToOne//(cascade = CascadeType.ALL)
     private Membership membership;
 
 
     public Person() {
     }
 
-    public Person(Integer id, String name, String address, LocalDate birthDate, Membership membership) {
+    public Person(Integer id, String name, String address, LocalDate birthDate, Membership membership, Gym gym) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.birthDate = birthDate;
         this.membership = membership;
+        this.gym = gym;
     }
 
-    public Person (String name, String address, LocalDate birthDate, Membership membership) {
-        this(null, name, address, birthDate, membership);
+    public Person (String name, String address, LocalDate birthDate, Membership membership, Gym gym) {
+        this(null, name, address, birthDate, membership, gym);
     }
 
     public Integer getId() {
@@ -70,5 +74,13 @@ public class Person {
 
     public void setMembership(Membership membership) {
         this.membership = membership;
+    }
+
+    public Gym getGym() {
+        return gym;
+    }
+
+    public void setGym(Gym gym) {
+        this.gym = gym;
     }
 }

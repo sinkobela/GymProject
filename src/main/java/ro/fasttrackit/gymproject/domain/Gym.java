@@ -1,7 +1,6 @@
 package ro.fasttrackit.gymproject.domain;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Gym {
@@ -11,16 +10,14 @@ public class Gym {
 
     private String name;
 
-    @OneToMany /* (targetEntity = Person.class, cascade = CascadeType.ALL) */
-    private List<Person> persons;
-
+    /* @OneToMany  (cascade = CascadeType.ALL)
+    private List<Person> persons; */
 
     public Gym() {
     }
 
-    public Gym(String name, List<Person> persons) {
+    public Gym(String name) {
         this.name = name;
-        this.persons = persons;
     }
 
     public Integer getId() {
@@ -37,13 +34,5 @@ public class Gym {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<Person> getPersons() {
-        return persons;
-    }
-
-    public void setPersons(List<Person> persons) {
-        this.persons = persons;
     }
 }
