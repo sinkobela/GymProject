@@ -7,7 +7,7 @@ import ro.fasttrackit.gymproject.services.PersonService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/persons")
+@RequestMapping("/api/persons")
 public class PersonController {
     private final PersonService personService;
 

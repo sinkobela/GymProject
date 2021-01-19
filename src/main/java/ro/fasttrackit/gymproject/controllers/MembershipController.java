@@ -7,7 +7,7 @@ import ro.fasttrackit.gymproject.services.MembershipService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/memberships")
+@RequestMapping("/api/memberships")
 public class MembershipController {
     private final MembershipService membershipService;
 

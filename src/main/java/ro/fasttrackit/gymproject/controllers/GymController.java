@@ -7,7 +7,7 @@ import ro.fasttrackit.gymproject.services.GymService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/gyms")
+@RequestMapping("/api/gyms")
 public class GymController {
     private final GymService gymService;
 
