@@ -2,8 +2,28 @@ function addNew() {
     const name = $('#modal-person-name').val();
     const address = $('#modal-person-address').val();
     const birthdate = $('#modal-person-birthdate').val();
-    const membership = $('#modal-person-membership').val();    // this has Name and Validfrom
+    const type = $('#modal-membership-type');
+    const validFrom = $('#modal-membership-validFrom');
+    const validTo = $('#modal-membership-validTo');
     const gym = $('#modal-person-gym').val();   // only gymName
+
+    fetch('/api/memberships', {
+        method: 'POST',
+        body: JSON.stringify({
+            type: type,
+            validFrom: validFrom,
+            validTo: validTo
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            location.reload()
+        } else {
+            alert()
+        }
+    });
 
     fetch('/api/persons', {
         method: 'POST',
@@ -11,7 +31,9 @@ function addNew() {
             name: name,
             address: address,
             birthdate: birthdate,
-            membership: membership,
+            type: type,
+            validFrom: validFrom,
+            validTo: validTo,
             gym: gym
         }),
         headers: {

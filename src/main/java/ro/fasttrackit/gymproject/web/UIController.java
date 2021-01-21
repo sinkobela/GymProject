@@ -25,7 +25,7 @@ public class UIController {
 
     @GetMapping("{personId}")
     String getPersonPage(Model pageModel, @PathVariable Integer personId) {
-        pageModel.addAttribute("showDetails", true);
+        pageModel.addAttribute("showDetails",true);
         Person one = personService.getById(personId);
         pageModel.addAttribute("selectedPerson", one);
         pageModel.addAttribute("persons", personService.getAll());
