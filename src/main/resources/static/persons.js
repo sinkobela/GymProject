@@ -21,7 +21,7 @@ function addNew() {
         }
     }).then(response => {
         if (response.ok) {
-            addPerson()
+            addNew()
             // location.reload()    // call person
         } else {
             alert()
@@ -54,7 +54,7 @@ function addNew() {
             membershipName: membershipName,
             validFrom: validFrom,
             validTo: validTo,
-            gym: gym
+            gymName: gymName
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -122,10 +122,12 @@ $(document).ready(() => {
     });
 
     $('.fa-trash-alt').click(function () {
+        var message = confirm("Are you sure you want to delete this person?");
+        if (message) {
         const toDelete = this.parentElement.id;
         fetch('/api/persons/' + toDelete, {
             method: 'DELETE'
-        }).then(response => location.reload());
+        }).then(response => location.reload());}
 
     });
 });

@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import ro.fasttrackit.gymproject.domain.Person;
 import ro.fasttrackit.gymproject.services.PersonService;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 @RestController

@@ -13,10 +13,10 @@ public class Person {
     private String address;
     private LocalDate birthDate;
 
-    @ManyToOne//(cascade = CascadeType.ALL)
+    @ManyToOne
     private Gym gym;
 
-    @OneToOne//(cascade = CascadeType.ALL)
+    @OneToOne
     private Membership membership;
 
 

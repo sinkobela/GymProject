@@ -10,9 +10,6 @@ public class Gym {
 
     private String gymName;
 
-    /* @OneToMany  (cascade = CascadeType.ALL)
-    private List<Person> persons; */
-
     public Gym() {
     }
 
@@ -35,4 +32,5 @@ public class Gym {
     public void setGymName(String gymName) {
         this.gymName = gymName;
     }
+
 }

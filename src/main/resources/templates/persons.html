@@ -12,7 +12,6 @@
     <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--    <link rel="shortcut icon" href="./musclee.jpg">-->
     <script src="/persons.js"></script>
     <style>
         body, html {
@@ -26,7 +25,7 @@
         }
 
         .bg {
-            height: 130%;
+            height: 100%;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -98,7 +97,7 @@
     <div class="container">
         <br>
         <br>
-        <ul class="nav nav-tab justify-content-xl-between border-bottom border-dark">
+        <ul class="nav nav-tab justify-content-xl-between border-bottom border-dark" id="myTab">
             <li class="active"><a data-toggle="tab"
                                   style="color: black; font-size: x-large; font-family: Bahnschrift SemiBold,serif"
                                   href="#menu">Menu</a></li>
@@ -142,10 +141,11 @@
                     </tr>
                     </thead>
                     <tbody id="personDataEndurance">
-                    <tr data-th-each="person:${persons}">
+                    <tr data-th-each="person:${endurancePersons}">
                         <td class="text-center"></td>
                         <td><a class="nav-link text-dark"
                                data-th-href="'/persons/' + ${person.id}"
+                               href="#endurance"
                                data-th-text="${person.name}"></a>
                         </td>
                         <td data-th-text="${person.membership.membershipName}"></td>
@@ -169,10 +169,14 @@
                                 <br>
                                 <li><span>Name: </span><span data-th-text="${selectedPerson.name}"></span></li>
                                 <li><span>Address: </span><span data-th-text="${selectedPerson.address}"></span></li>
-                                <li><span>Birthdate: </span><span data-th-text="${selectedPerson.birthDate}"></span></li>
-                                <li><span>Membership Type: </span><span data-th-text="${selectedPerson.membership?.membershipName}"></span></li>
-                                <li><span>Membership Valid From: </span><span data-th-text="${selectedPerson.membership?. validFrom}"></span></li>
-                                <li><span>Membership Valid To: </span><span data-th-text="${selectedPerson.membership?.validTo}"></span></li>
+                                <li><span>Birthdate: </span><span data-th-text="${selectedPerson.birthDate}"></span>
+                                </li>
+                                <li><span>Membership Type: </span><span
+                                        data-th-text="${selectedPerson.membership?.membershipName}"></span></li>
+                                <li><span>Membership Valid From: </span><span
+                                        data-th-text="${selectedPerson.membership?. validFrom}"></span></li>
+                                <li><span>Membership Valid To: </span><span
+                                        data-th-text="${selectedPerson.membership?.validTo}"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -182,10 +186,11 @@
                 <div class="modal" id="personModal">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <!--                MODAL HEAD-->
+                            <!--                MODAL HEADER-->
                             <div class="modal-header">
                                 <h4 class="modal-title">Add / Edit Person</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="close">&times;
+                                </button>
                             </div>
                             <!--                MODAL BODY-->
                             <div class="modal-body">
@@ -222,14 +227,6 @@
             <!--    /ENDURANCE-->
 
 
-
-
-
-
-
-
-
-
             <!--    OXYGEN-->
             <div id="oxygen" class="tab-pane fade">
                 <br>
@@ -252,10 +249,11 @@
                     </tr>
                     </thead>
                     <tbody id="personDataOxygen">
-                    <tr data-th-each="person:${persons}">
+                    <tr data-th-each="person:${oxygenPersons}">
                         <td class="text-center"></td>
                         <td><a class="nav-link text-dark"
                                data-th-href="'/persons/' + ${person.id}"
+                               href="#oxygen"
                                data-th-text="${person.name}"></a>
                         </td>
                         <td data-th-text="${person.membership.membershipName}"></td>
@@ -279,16 +277,20 @@
                                 <br>
                                 <li><span>Name: </span><span data-th-text="${selectedPerson.name}"></span></li>
                                 <li><span>Address: </span><span data-th-text="${selectedPerson.address}"></span></li>
-                                <li><span>Birthdate: </span><span data-th-text="${selectedPerson.birthDate}"></span></li>
-                                <li><span>Membership Type: </span><span data-th-text="${selectedPerson.membership?.membershipName}"></span></li>
-                                <li><span>Membership Valid From: </span><span data-th-text="${selectedPerson.membership?. validFrom}"></span></li>
-                                <li><span>Membership Valid To: </span><span data-th-text="${selectedPerson.membership?.validTo}"></span></li>
+                                <li><span>Birthdate: </span><span data-th-text="${selectedPerson.birthDate}"></span>
+                                </li>
+                                <li><span>Membership Type: </span><span
+                                        data-th-text="${selectedPerson.membership?.membershipName}"></span></li>
+                                <li><span>Membership Valid From: </span><span
+                                        data-th-text="${selectedPerson.membership?. validFrom}"></span></li>
+                                <li><span>Membership Valid To: </span><span
+                                        data-th-text="${selectedPerson.membership?.validTo}"></span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                </div>
-                <!--            /DETAILS-->
+            </div>
+            <!--            /DETAILS-->
             <!--    /OXYGEN-->
 
 
@@ -314,10 +316,11 @@
                     </tr>
                     </thead>
                     <tbody id="personDataFit">
-                    <tr data-th-each="person:${persons}">
+                    <tr data-th-each="person:${fit4youPersons}">
                         <td class="text-center"></td>
                         <td><a class="nav-link text-dark"
                                data-th-href="'/persons/' + ${person.id}"
+                               href="#fit"
                                data-th-text="${person.name}"></a>
                         </td>
                         <td data-th-text="${person.membership.membershipName}"></td>
@@ -341,10 +344,14 @@
                                 <br>
                                 <li><span>Name: </span><span data-th-text="${selectedPerson.name}"></span></li>
                                 <li><span>Address: </span><span data-th-text="${selectedPerson.address}"></span></li>
-                                <li><span>Birthdate: </span><span data-th-text="${selectedPerson.birthDate}"></span></li>
-                                <li><span>Membership Type: </span><span data-th-text="${selectedPerson.membership?.membershipName}"></span></li>
-                                <li><span>Membership Valid From: </span><span data-th-text="${selectedPerson.membership?. validFrom}"></span></li>
-                                <li><span>Membership Valid To: </span><span data-th-text="${selectedPerson.membership?.validTo}"></span></li>
+                                <li><span>Birthdate: </span><span data-th-text="${selectedPerson.birthDate}"></span>
+                                </li>
+                                <li><span>Membership Type: </span><span
+                                        data-th-text="${selectedPerson.membership?.membershipName}"></span></li>
+                                <li><span>Membership Valid From: </span><span
+                                        data-th-text="${selectedPerson.membership?. validFrom}"></span></li>
+                                <li><span>Membership Valid To: </span><span
+                                        data-th-text="${selectedPerson.membership?.validTo}"></span></li>
                             </ul>
                         </div>
                     </div>

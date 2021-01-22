@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import ro.fasttrackit.gymproject.domain.Person;
 import ro.fasttrackit.gymproject.services.PersonService;
 
+
 @Controller
 @RequestMapping("persons")
 public class UIController {
@@ -20,6 +21,9 @@ public class UIController {
     @GetMapping
     String getPersonsPage(Model pageModel) {
         pageModel.addAttribute("persons", personService.getAll());
+        pageModel.addAttribute("endurancePersons", personService.getPersonsByGymId(1));
+        pageModel.addAttribute("oxygenPersons", personService.getPersonsByGymId(2));
+        pageModel.addAttribute("fit4youPersons", personService.getPersonsByGymId(3));
         return "persons";
     }
 
@@ -29,6 +33,9 @@ public class UIController {
         Person one = personService.getById(personId);
         pageModel.addAttribute("selectedPerson", one);
         pageModel.addAttribute("persons", personService.getAll());
+        pageModel.addAttribute("endurancePersons", personService.getPersonsByGymId(1));
+        pageModel.addAttribute("oxygenPersons", personService.getPersonsByGymId(2));
+        pageModel.addAttribute("fit4youPersons", personService.getPersonsByGymId(3));
         if (one != null) {
             return "persons";
         } else {

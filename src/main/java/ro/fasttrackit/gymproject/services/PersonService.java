@@ -5,6 +5,7 @@ import ro.fasttrackit.gymproject.domain.Person;
 import ro.fasttrackit.gymproject.exceptions.NotFoundException;
 import ro.fasttrackit.gymproject.repositories.PersonRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -39,5 +40,18 @@ public class PersonService {
         personToEdit.setAddress(person.getAddress());
         personToEdit.setBirthDate(person.getBirthDate());
         return repository.save(personToEdit);
+    }
+
+    public List<Person> getPersonsByGymId(Integer gymId) {
+        List<Person> result = new ArrayList<>();
+        for (Person person:getAll()) {
+            if (person.getGym().getId().equals(gymId)) {
+                result.add(person);
+            }
+        }
+        if (result.isEmpty()) {
+            throw new NotFoundException("Could not find Person with this Gym ID: " + gymId);
+        }
+        return result;
     }
 }
