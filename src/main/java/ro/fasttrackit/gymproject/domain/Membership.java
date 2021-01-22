@@ -13,6 +13,7 @@ public class Membership {
     private Integer id;
 
     private Type type;
+    private String membershipName;
     private LocalDate validFrom;
     private LocalDate validTo;
 
@@ -22,6 +23,7 @@ public class Membership {
     public Membership(Integer id, Type type, LocalDate validFrom) {
         this.id = id;
         this.type = type;
+        this.membershipName = setMembershipName(type);
         this.validFrom = validFrom;
         this.validTo = setValidTo(type, validFrom);
     }
@@ -71,11 +73,29 @@ public class Membership {
         this.validFrom = validFrom;
     }
 
+    public String getMembershipName() {
+        return membershipName;
+    }
+
+    public String setMembershipName(Type type) {
+        String result;
+        if (type == Type.ONE_MONTH) {
+            result = "One Month";
+        } else if (type == Type.THREE_MONTH) {
+            result = "Three Month";
+        } else {
+            result = "Six Month";
+        }
+        this.membershipName = result;
+        return result;
+    }
+
     @Override
     public String toString() {
         return "Membership{" +
                 "id=" + id +
                 ", type=" + type +
+                ", membershipName=" + membershipName +
                 ", validFrom=" + validFrom +
                 ", validTo=" + validTo +
                 '}';

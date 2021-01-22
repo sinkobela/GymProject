@@ -69,7 +69,7 @@
             background-color: whitesmoke;
             color: black;
             border: 2px solid #008CBA;
-            border-radius: 10px;
+            border-radius: 20px;
         }
 
         .button2:hover {
@@ -148,7 +148,7 @@
                                data-th-href="'/persons/' + ${person.id}"
                                data-th-text="${person.name}"></a>
                         </td>
-                        <td data-th-text="${person.membership.type}"></td>
+                        <td data-th-text="${person.membership.membershipName}"></td>
                         <td data-th-id="${person.id}" style="text-align: center">
                             <i class="fas fa-edit" data-target="#personModal" data-toggle="modal"></i>
                             <i class="fas fa-trash-alt"></i>
@@ -156,6 +156,7 @@
                     </tr>
                     </tbody>
                 </table>
+                <br>
                 <!--    /TABLE-->
                 <!--            DETAILS-->
                 <div class="container-fluid" data-th-if="${showDetails}" style="background-color: whitesmoke; font-family:
@@ -169,10 +170,9 @@
                                 <li><span>Name: </span><span data-th-text="${selectedPerson.name}"></span></li>
                                 <li><span>Address: </span><span data-th-text="${selectedPerson.address}"></span></li>
                                 <li><span>Birthdate: </span><span data-th-text="${selectedPerson.birthDate}"></span></li>
-                                <li><span>Membership Type: </span><span data-th-text="${selectedPerson.membership?.type}"></span></li>
+                                <li><span>Membership Type: </span><span data-th-text="${selectedPerson.membership?.membershipName}"></span></li>
                                 <li><span>Membership Valid From: </span><span data-th-text="${selectedPerson.membership?. validFrom}"></span></li>
                                 <li><span>Membership Valid To: </span><span data-th-text="${selectedPerson.membership?.validTo}"></span></li>
-                                <br>
                             </ul>
                         </div>
                     </div>
@@ -211,7 +211,8 @@
                                 <button class="btn btn-success" data-dismiss="modal" type="button"
                                         onclick="addPerson()">Save
                                 </button>
-                                <button class="btn btn-danger" data-dismiss="modal" type="button">Close</button>
+                                <button class="btn btn-danger" data-dismiss="modal" type="button">Close
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -219,6 +220,14 @@
                 <!--    /MODAL-->
             </div>
             <!--    /ENDURANCE-->
+
+
+
+
+
+
+
+
 
 
             <!--    OXYGEN-->
@@ -249,7 +258,7 @@
                                data-th-href="'/persons/' + ${person.id}"
                                data-th-text="${person.name}"></a>
                         </td>
-                        <td data-th-text="${person.membership}"></td>
+                        <td data-th-text="${person.membership.membershipName}"></td>
                         <td data-th-id="${person.id}" style="text-align: center">
                             <i class="fas fa-edit" data-target="#personModal" data-toggle="modal"></i>
                             <i class="fas fa-trash-alt"></i>
@@ -257,6 +266,7 @@
                     </tr>
                     </tbody>
                 </table>
+                <br>
                 <!--    /TABLE-->
                 <!--            DETAILS-->
                 <div class="container-fluid" data-th-if="${showDetails}" style="background-color: whitesmoke; font-family:
@@ -266,25 +276,22 @@
                         </div>
                         <div class="card-body">
                             <ul>
+                                <br>
                                 <li><span>Name: </span><span data-th-text="${selectedPerson.name}"></span></li>
                                 <li><span>Address: </span><span data-th-text="${selectedPerson.address}"></span></li>
                                 <li><span>Birthdate: </span><span data-th-text="${selectedPerson.birthDate}"></span></li>
-                                <li><span>Membership: </span><span data-th-text="${selectedPerson.membership}"></span></li>
-                                <br>
-                                <br>
-                                <li><span>MEMBERSHIP - NOT FINAL FORM!</span></li>
-                                <!--                           <li><span>Membership Type: </span><span-->
-                                <!--                                        data-th-text="${selectedPerson.membership?.name}"></span></li>-->
-                                <!--                                <li><span>Membership Valid From: </span><span-->
-                                <!--                                        data-th-text="${selectedPerson.membership?.validFrom}"></span></li>-->
-                                <!--                                <li><span>Membership Valid To: </span><span-->
-                                <!--                                        data-th-text="${selectedPerson.membership?.validTo}"></span></li>-->
+                                <li><span>Membership Type: </span><span data-th-text="${selectedPerson.membership?.membershipName}"></span></li>
+                                <li><span>Membership Valid From: </span><span data-th-text="${selectedPerson.membership?. validFrom}"></span></li>
+                                <li><span>Membership Valid To: </span><span data-th-text="${selectedPerson.membership?.validTo}"></span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
+                <!--            /DETAILS-->
             <!--    /OXYGEN-->
+
+
             <!--    FIT 4 YOU-->
             <div id="fit" class="tab-pane fade">
                 <br>
@@ -313,7 +320,7 @@
                                data-th-href="'/persons/' + ${person.id}"
                                data-th-text="${person.name}"></a>
                         </td>
-                        <td data-th-text="${person.membership}"></td>
+                        <td data-th-text="${person.membership.membershipName}"></td>
                         <td data-th-id="${person.id}" style="text-align: center">
                             <i class="fas fa-edit" data-target="#personModal" data-toggle="modal"></i>
                             <i class="fas fa-trash-alt"></i>
@@ -321,6 +328,7 @@
                     </tr>
                     </tbody>
                 </table>
+                <br>
                 <!--    /TABLE-->
                 <!--            DETAILS-->
                 <div class="container-fluid" data-th-if="${showDetails}" style="background-color: whitesmoke; font-family:
@@ -330,27 +338,20 @@
                         </div>
                         <div class="card-body">
                             <ul>
+                                <br>
                                 <li><span>Name: </span><span data-th-text="${selectedPerson.name}"></span></li>
                                 <li><span>Address: </span><span data-th-text="${selectedPerson.address}"></span></li>
                                 <li><span>Birthdate: </span><span data-th-text="${selectedPerson.birthDate}"></span></li>
-                                <li><span>Membership: </span><span data-th-text="${selectedPerson.membership}"></span></li>
-                                <br>
-                                <br>
-                                <li><span>MEMBERSHIP - NOT FINAL FORM!</span></li>
-                                <!--                                <li><span>Membership Type: </span><span-->
-                                <!--                                        data-th-text="${selectedPerson.membership?.name}"></span></li>-->
-                                <!--                                <li><span>Membership Valid From: </span><span-->
-                                <!--                                        data-th-text="${selectedPerson.membership?.validFrom}"></span></li>-->
-                                <!--                                <li><span>Membership Valid To: </span><span-->
-                                <!--                                        data-th-text="${selectedPerson.membership?.validTo}"></span></li>-->
+                                <li><span>Membership Type: </span><span data-th-text="${selectedPerson.membership?.membershipName}"></span></li>
+                                <li><span>Membership Valid From: </span><span data-th-text="${selectedPerson.membership?. validFrom}"></span></li>
+                                <li><span>Membership Valid To: </span><span data-th-text="${selectedPerson.membership?.validTo}"></span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
             </div>
+            <!--            /DETAILS-->
             <!--    /FIT 4 YOU-->
-
         </div>
     </div>
     <!--  /NAV TABS-->

@@ -2,17 +2,36 @@ function addNew() {
     const name = $('#modal-person-name').val();
     const address = $('#modal-person-address').val();
     const birthdate = $('#modal-person-birthdate').val();
-    const type = $('#modal-membership-type');
-    const validFrom = $('#modal-membership-validFrom');
-    const validTo = $('#modal-membership-validTo');
-    const gym = $('#modal-person-gym').val();   // only gymName
+    const type = $('#modal-membership-type').val();
+    const membershipName = $('#modal-membership-membershipName').val();
+    const validFrom = $('#modal-membership-validFrom').val();
+    const validTo = $('#modal-membership-validTo').val();
+    const gymName = $('#modal-gym-gymName').val();
 
     fetch('/api/memberships', {
         method: 'POST',
         body: JSON.stringify({
             type: type,
+            membershipName: membershipName,
             validFrom: validFrom,
             validTo: validTo
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            addPerson()
+            // location.reload()    // call person
+        } else {
+            alert()
+        }
+    });
+
+    fetch('/api/gyms', {
+        method: 'POST',
+        body: JSON.stringify({
+            gymName: gymName
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -32,6 +51,7 @@ function addNew() {
             address: address,
             birthdate: birthdate,
             type: type,
+            membershipName: membershipName,
             validFrom: validFrom,
             validTo: validTo,
             gym: gym

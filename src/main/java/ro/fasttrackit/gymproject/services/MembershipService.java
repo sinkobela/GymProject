@@ -36,6 +36,7 @@ public class MembershipService {
     public Membership editMembership(Integer id, Membership membership) {
         Membership membershipToEdit = getById(id);
         membershipToEdit.setType(membership.getType());
+        membershipToEdit.setMembershipName(membership.getType());
         membershipToEdit.setValidFrom(membership.getValidFrom());
         membershipToEdit.setValidTo(membership.getType(), membership.getValidFrom());
         return repository.save(membershipToEdit);

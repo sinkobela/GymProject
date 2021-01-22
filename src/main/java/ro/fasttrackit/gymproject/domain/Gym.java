@@ -8,7 +8,7 @@ public class Gym {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;
+    private String gymName;
 
     /* @OneToMany  (cascade = CascadeType.ALL)
     private List<Person> persons; */
@@ -16,8 +16,8 @@ public class Gym {
     public Gym() {
     }
 
-    public Gym(String name) {
-        this.name = name;
+    public Gym(String gymName) {
+        this.gymName = gymName;
     }
 
     public Integer getId() {
@@ -28,11 +28,11 @@ public class Gym {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getGymName() {
+        return gymName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGymName(String gymName) {
+        this.gymName = gymName;
     }
 }
