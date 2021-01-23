@@ -13,8 +13,13 @@ public class Gym {
     public Gym() {
     }
 
-    public Gym(String gymName) {
+    public Gym(Integer id, String gymName) {
+        this.id = id;
         this.gymName = gymName;
+    }
+
+    public Gym(String gymName) {
+        this(null, gymName);
     }
 
     public Integer getId() {

@@ -31,8 +31,8 @@ public class DataLoader implements CommandLineRunner {
         Membership threeMonth = membershipService.addMembership(new Membership(Type.THREE_MONTH, LocalDate.of(2021,1,1)));
         Membership sixMonth = membershipService.addMembership(new Membership(Type.SIX_MONTH, LocalDate.of(2021,1,1)));
 
-        Gym endurance = gymService.addGym(new Gym("Endurance fitness"));
-        Gym oxygen = gymService.addGym(new Gym("Oxygen GYM"));
+        Gym endurance = gymService.addGym(new Gym("Endurance Fitness"));
+        Gym oxygen = gymService.addGym(new Gym("Oxygen Gym"));
         Gym fit4You = gymService.addGym(new Gym("Fit 4 You"));
 
         personService.addPerson(new Person("Popescu Vlad", "Nufarului 28", LocalDate.of(1995,11,3), oneMonth, endurance));

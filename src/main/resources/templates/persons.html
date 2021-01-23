@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
     <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -97,6 +97,7 @@
     <div class="container">
         <br>
         <br>
+        <br>
         <ul class="nav nav-tab justify-content-xl-between border-bottom border-dark" id="myTab">
             <li class="active"><a data-toggle="tab"
                                   style="color: black; font-size: x-large; font-family: Bahnschrift SemiBold,serif"
@@ -112,6 +113,7 @@
         <div class="tab-content">
             <!--    MENU-->
             <div id="menu" class="tab-pane fade in active">
+                <br>
                 <br>
                 <br>
                 <br>
@@ -182,47 +184,6 @@
                     </div>
                 </div>
                 <!--            /DETAILS-->
-                <!--    MODAL-->
-                <div class="modal" id="personModal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <!--                MODAL HEADER-->
-                            <div class="modal-header">
-                                <h4 class="modal-title">Add / Edit Person</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="close">&times;
-                                </button>
-                            </div>
-                            <!--                MODAL BODY-->
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <label for="modal-person-name">Name</label>
-                                    <input type="text" id="modal-person-name" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="modal-person-address">Address</label>
-                                    <input type="text" id="modal-person-address" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="modal-person-birthDate">Birthdate</label>
-                                    <input type="datetime-local" id="modal-person-birthDate" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="modal-person-membership">Membership</label>
-                                    <input type="text" id="modal-person-membership" class="form-control">
-                                </div>
-                            </div>
-                            <!--                MODAL FOOTER-->
-                            <div class="modal-footer">
-                                <button class="btn btn-success" data-dismiss="modal" type="button"
-                                        onclick="addPerson()">Save
-                                </button>
-                                <button class="btn btn-danger" data-dismiss="modal" type="button">Close
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--    /MODAL-->
             </div>
             <!--    /ENDURANCE-->
 
@@ -289,8 +250,8 @@
                         </div>
                     </div>
                 </div>
+                <!--            /DETAILS-->
             </div>
-            <!--            /DETAILS-->
             <!--    /OXYGEN-->
 
 
@@ -359,6 +320,57 @@
             </div>
             <!--            /DETAILS-->
             <!--    /FIT 4 YOU-->
+
+            <!--    MODAL-->
+            <div class="modal" id="personModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!--                MODAL HEADER-->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add / Edit Person</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="close">&times;
+                            </button>
+                        </div>
+                        <!--                MODAL BODY-->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="modal-person-name">Name</label>
+                                <input type="text" id="modal-person-name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="modal-person-address">Address</label>
+                                <input type="text" id="modal-person-address" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="modal-person-birthDate">Birthdate</label>
+                                <input type="date" id="modal-person-birthDate" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="modal-membership-membershipType">Membership Type</label>
+                                <input type="text" id="modal-membership-membershipType" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="modal-membership-membershipValidFrom">Membership Valid From</label>
+                                <input type="date" id="modal-membership-membershipValidFrom" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="modal-gym-gymName">Gym</label>
+                                <input type="text" id="modal-gym-gymName" class="form-control">
+                            </div>
+
+                        </div>
+                        <!--                MODAL FOOTER-->
+                        <div class="modal-footer">
+                            <button class="btn btn-success" data-dismiss="modal" type="button"
+                                    onclick="addPerson()">Save
+                            </button>
+                            <button class="btn btn-danger" data-dismiss="modal" type="button">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--    /MODAL-->
         </div>
     </div>
     <!--  /NAV TABS-->
@@ -366,3 +378,6 @@
 <!-- BACKGROUND-->
 </body>
 </html>
+
+
+
